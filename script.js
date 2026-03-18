@@ -4,20 +4,20 @@
 const TIME_LIMIT = 60;
 const STARTING_SCORE = 100;
 
-// Placeholder image paths. Replace these files later with real art/photos.
+// Image paths from the local img folder.
 const images = [
-	{ src: "images/clean1.png", type: "clean", label: "Clean river" },
-	{ src: "images/clean2.png", type: "clean", label: "Water droplet" },
-	{ src: "images/clean3.png", type: "clean", label: "Safe faucet" },
-	{ src: "images/clean4.png", type: "clean", label: "Protected well" },
-	{ src: "images/dirty1.png", type: "dirty", label: "Polluted stream" },
-	{ src: "images/dirty2.png", type: "dirty", label: "Trash in water" },
-	{ src: "images/dirty3.png", type: "dirty", label: "Unsafe puddle" },
-	{ src: "images/dirty4.png", type: "dirty", label: "Contaminated barrel" },
-	{ src: "images/neutral1.png", type: "neutral", label: "Bicycle" },
-	{ src: "images/neutral2.png", type: "neutral", label: "Notebook" },
-	{ src: "images/neutral3.png", type: "neutral", label: "Backpack" },
-	{ src: "images/neutral4.png", type: "neutral", label: "Street sign" }
+	{ src: "img/Clean Water Clean river.jpg", type: "clean", label: "Clean river" },
+	{ src: "img/Clean Water Water droplet.jpg", type: "clean", label: "Water droplet" },
+	{ src: "img/Clean Water Safe faucet.jpg", type: "clean", label: "Safe faucet" },
+	{ src: "img/Clean Water Protected well.jpg", type: "clean", label: "Protected well" },
+	{ src: "img/Unsafe Water Polluted stream.jpg", type: "dirty", label: "Polluted stream" },
+	{ src: "img/Unsafe Water Trash in water.jpg", type: "dirty", label: "Trash in water" },
+	{ src: "img/Unsafe Water Unsafe puddle.jpg", type: "dirty", label: "Unsafe puddle" },
+	{ src: "img/water-can.png", type: "dirty", label: "Unsafe water can" },
+	{ src: "img/Other Item Bicycle.jpg", type: "neutral", label: "Bicycle" },
+	{ src: "img/Other Item Notebook.jpg", type: "neutral", label: "Notebook" },
+	{ src: "img/Other Item Backpack.jpg", type: "neutral", label: "Backpack" },
+	{ src: "img/Other Item Street sign.jpg", type: "neutral", label: "Street sign" }
 ];
 
 const state = {
