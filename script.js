@@ -48,12 +48,14 @@ function initGame() {
 	elements.jerryAlert = document.getElementById("jerryAlert");
 	elements.jerryAlertText = document.getElementById("jerryAlertText");
 	elements.jerryWater = document.getElementById("jerryWater");
+	elements.challengePanel = document.querySelector(".panel-center");
 
 	elements.startButton.addEventListener("click", startGame);
 	elements.verifyButton.addEventListener("click", validateSelection);
 	elements.reloadButton.addEventListener("click", generateGrid);
 	elements.awarenessCheck.addEventListener("change", updateChecklistIcons);
 	elements.robotCheck.addEventListener("change", updateChecklistIcons);
+	elements.appContainer = document.querySelector(".app-container");
 
 	updateChecklistIcons();
 	updateTimer();
@@ -70,12 +72,14 @@ function startGame() {
 	state.elapsedSeconds = 0;
 	state.gameActive = true;
 	state.selectedTileIndexes.clear();
+	elements.appContainer.classList.add("active");
 	elements.verifyButton.disabled = false;
 	elements.reloadButton.disabled = false;
 	elements.centerMessage.textContent = "Challenge started. Select all clean water images, then press Verify.";
 	elements.statusHeadline.textContent = "In progress";
 	elements.statusMessage.textContent = "Find every clean image and avoid dirty or unrelated images.";
 	showJerryCanAlert("Jerry can filled. Challenge started.", "success", 70);
+	scrollToChallengePanel();
 
 	generateGrid();
 	updateTimer();
@@ -91,6 +95,22 @@ function startGame() {
 			endGame(false, true);
 		}
 	}, 1000);
+}
+
+function scrollToChallengePanel() {
+	if (!elements.challengePanel) {
+		return;
+	}
+
+	const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+	// Wait a moment so layout updates before scrolling to the challenge panel.
+	setTimeout(() => {
+		elements.challengePanel.scrollIntoView({
+			behavior: prefersReducedMotion ? "auto" : "smooth",
+			block: "start"
+		});
+	}, 120);
 }
 
 function generateGrid() {
