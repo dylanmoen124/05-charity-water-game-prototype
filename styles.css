@@ -61,8 +61,37 @@ grid-template-columns: 1fr 1fr 1fr;
 .app-container.active .panel-left {
 grid-column: span 3;
 margin-bottom: 1rem;
-max-width: none;
-width: 100%;
+max-width: 460px;
+width: min(460px, 100%);
+padding: 0.75rem 0.9rem;
+transform: scale(0.94);
+transform-origin: top center;
+opacity: 0.92;
+}
+
+.app-container.active .panel-left h1 {
+font-size: 1.25rem;
+margin-bottom: 0.5rem;
+}
+
+.app-container.active .panel-left .checklist {
+margin: 0.65rem 0 0.8rem;
+gap: 0.45rem;
+}
+
+.app-container.active .panel-left .check-item {
+padding: 0.5rem;
+font-size: 0.9rem;
+}
+
+.app-container.active .panel-left .btn-primary {
+margin-bottom: 0.45rem;
+padding: 0.58rem 0.8rem;
+font-size: 0.9rem;
+}
+
+.app-container.active .panel-left .tiny-note {
+font-size: 0.78rem;
 }
 
 .app-container.active .app {
